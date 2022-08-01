@@ -35,4 +35,28 @@ export class RestDataService {
       )
       .pipe(catchError(this.handleError));
   }
+
+  public saveCustomer(customer: any): Observable<any> {
+    return this._httpClient
+      .post(this.BASE_REST_API_URL + '/api/customer/save', customer)
+      .pipe(catchError(this.handleError));
+  }
+
+  public updateCustomer(
+    customerNumber: number,
+    customer: ICustomer
+  ): Observable<any> {
+    return this._httpClient
+      .put<ICustomer>(
+        this.BASE_REST_API_URL + '/api/customer/update/' + customerNumber,
+        customer
+      )
+      .pipe(catchError(this.handleError));
+  }
+
+  public deleteCustomer(customerNumber: number): Observable<any> {
+    return this._httpClient
+      .delete(this.BASE_REST_API_URL + '/api/customer/delete/' + customerNumber)
+      .pipe(catchError(this.handleError));
+  }
 }
