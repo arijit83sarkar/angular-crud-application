@@ -1,11 +1,10 @@
 <h2>Customers</h2>
+<div>
+  <button title="add customer" style="color: cornflowerblue" (click)="add()">
+    add
+  </button>
+</div>
 <ul>
-  <!-- <li *ngFor="let cust of _customers; let i = index">
-    <a routerLink="#{{ cust.customerNumber }}">
-      <span class="badge">{{ i + 1 }}</span> {{ cust.customerName }}
-    </a>
-    <button class="delete" title="delete product">x</button>
-  </li> -->
   <table>
     <tr style="text-align: left">
       <th>Customer Name</th>
@@ -21,12 +20,22 @@
       <td>{{ cust.city }}</td>
       <td>{{ cust.country }}</td>
       <td>
-        <button title="edit customer" style="color: cornflowerblue">
+        <button
+          title="edit customer"
+          style="color: cornflowerblue"
+          (click)="edit(cust.customerNumber)"
+        >
           edit
         </button>
       </td>
       <td>
-        <button title="delete customer" style="color: red">delete</button>
+        <button
+          title="delete customer"
+          style="color: red"
+          (click)="delete(cust.customerNumber)"
+        >
+          delete
+        </button>
       </td>
     </tr>
   </table>
