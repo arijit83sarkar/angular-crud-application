@@ -1,42 +1,50 @@
-<h2>Customers</h2>
-<div>
-  <button title="add customer" style="color: cornflowerblue" (click)="add()">
-    add
-  </button>
+<div class="container-fluid">
+  <div class="starter-template">
+    <h1>Customers</h1>
+    <div style="text-align: right">
+      <button title="add customer" class="btn btn-primary" (click)="add()">
+        add customer
+      </button>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm table-hover">
+        <thead>
+          <tr style="text-align: left">
+            <th>Customer Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody style="text-align: left">
+          <tr *ngFor="let cust of _customers; let i = index">
+            <td>{{ cust.customerName }}</td>
+            <td>{{ cust.phone }}</td>
+            <td>{{ cust.address1 }}</td>
+            <td>{{ cust.city }}</td>
+            <td>{{ cust.country }}</td>
+            <td>
+              <button
+                title="edit customer"
+                class="btn btn-secondary btn-sm"
+                (click)="edit(cust.customerNumber)"
+              >
+                edit
+              </button>
+            </td>
+            <td>
+              <button
+                title="delete customer"
+                class="btn btn-danger btn-sm"
+                (click)="delete(cust.customerNumber)"
+              >
+                delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-<ul>
-  <table>
-    <tr style="text-align: left">
-      <th>Customer Name</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>Country</th>
-    </tr>
-    <tr *ngFor="let cust of _customers; let i = index">
-      <td>{{ cust.customerName }}</td>
-      <td>{{ cust.phone }}</td>
-      <td>{{ cust.address1 }}</td>
-      <td>{{ cust.city }}</td>
-      <td>{{ cust.country }}</td>
-      <td>
-        <button
-          title="edit customer"
-          style="color: cornflowerblue"
-          (click)="edit(cust.customerNumber)"
-        >
-          edit
-        </button>
-      </td>
-      <td>
-        <button
-          title="delete customer"
-          style="color: red"
-          (click)="delete(cust.customerNumber)"
-        >
-          delete
-        </button>
-      </td>
-    </tr>
-  </table>
-</ul>
