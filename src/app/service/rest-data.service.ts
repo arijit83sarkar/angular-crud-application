@@ -16,7 +16,7 @@ export class RestDataService {
       console.error('ERROR :: ', error.error.message);
     } else {
       console.error(
-        `ERROR Code :: ${error.status}, ` + `Message :: ${error.error}`
+        `ERROR Code :: ${error.status}, ` + `Message :: ${error.error.message}`
       );
     }
     return throwError('Please try again!!!');

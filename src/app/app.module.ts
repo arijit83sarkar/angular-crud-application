@@ -7,10 +7,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerComponent } from './page/customer/customer.component';
 import { CustomerAddComponent } from './page/customer-add/customer-add.component';
 import { CustomerEditComponent } from './page/customer-edit/customer-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, CustomerComponent, CustomerAddComponent, CustomerEditComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    CustomerComponent,
+    CustomerAddComponent,
+    CustomerEditComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
